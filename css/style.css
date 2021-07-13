@@ -624,8 +624,7 @@ img {
 }
 .backdrop .modal {
   width: 528px;
-  min-height: 581px;
-  padding: 8px;
+  padding: 40px;
   position: relative;
 
   background-color: #ffffff;
@@ -662,4 +661,14 @@ img {
 .modal-btn-close:hover .modal-icon {
   fill: var(--brand-color);
   transform: rotate(0.25turn);
+}
+
+.modal-title{
+  font-weight: 700;
+font-size: 20px;
+line-height: 1.15;
+text-align: center;
+letter-spacing: 0.03em;
+
+color: var(--title-color);
 }
