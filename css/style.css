@@ -57,6 +57,39 @@ img {
   letter-spacing: 0.03em;
   color: var(--title-color);
 }
+.button {
+  padding: 10px 32px;
+
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.875;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  min-width: 200px;
+  background-color: var(--brand-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+
+  transition: background-color var(--animation-time) var(--timing-function);
+}
+.button:hover {
+  background-color: #188ce8;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
 
 /* SOCIAL LINK */
 .social-link {
@@ -218,28 +251,7 @@ img {
   text-transform: uppercase;
   color: #ffffff;
 }
-.banner-section-button {
-  padding: 10px 32px;
 
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.875;
-  text-align: center;
-  letter-spacing: 0.06em;
-  color: #ffffff;
-  min-width: 200px;
-  background-color: var(--brand-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-
-  transition: background-color var(--animation-time) var(--timing-function);
-}
-.banner-section-button:hover {
-  background-color: #188ce8;
-}
 /*------------------ advantages section ------------------*/
 .advantages-list {
   display: flex;
@@ -468,6 +480,8 @@ img {
 }
 
 .footer-title {
+  display: block;
+  margin-bottom: 20px;
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
@@ -476,7 +490,6 @@ img {
 
 .footer-social-list {
   display: flex;
-  margin-top: 20px;
 }
 
 .footer-social-link {
@@ -489,7 +502,50 @@ img {
 .footer-social-link:hover {
   background-color: var(--brand-color);
 }
+/* sub */
+.footer-subscribe {
+  margin-left: auto;
+  width: 570px;
+}
+.form-subscribe {
+  display: flex;
+}
+.subscribe-input {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  padding: 15px;
+  margin-right: 12px;
 
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  outline: none;
+}
+.subscribe-input::placeholder {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+/* .subscribe-input:focus {
+} */
+.subscribe-btn {
+  display: flex;
+}
+.subscribe-btn span {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe-icon {
+  fill: #ffffff;
+  margin-left: 10px;
+}
 /* ---------------------------------------- portfolio ---------------------------------------- */
 /*------------------ filter ------------------*/
 .filter-list {
@@ -597,12 +653,11 @@ img {
   letter-spacing: 0.03em;
 }
 
-/* MODAL */
+/*------------------------------------- MODAL ----------------------------------*/
 .backdrop.is-hidden {
   pointer-events: none;
   opacity: 0;
   transition: opacity var(--animation-time) var(--timing-function);
-  /* transform: scale(0); */
 }
 .backdrop.is-hidden .modal {
   transform: scale(0);
@@ -631,6 +686,11 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
 
   transform: scale(1);
   transition: transform var(--animation-time) var(--timing-function);
@@ -663,12 +723,130 @@ img {
   transform: rotate(0.25turn);
 }
 
-.modal-title{
+.modal-title {
   font-weight: 700;
-font-size: 20px;
-line-height: 1.15;
-text-align: center;
-letter-spacing: 0.03em;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
 
-color: var(--title-color);
+  color: var(--title-color);
+}
+
+.modal-form {
+  width: 100%;
+}
+.form-field:nth-child(-n + 3) {
+  margin-bottom: 10px;
+}
+.form-field:nth-child(4) {
+  margin-bottom: 20px;
+}
+.form-field:nth-child(5) {
+  margin-bottom: 30px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 4px;
+}
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  fill: var(--title-color);
+  transition: fill var(--animation-time) var(--timing-function);
+}
+.form-input {
+  width: 100%;
+  padding: 12px 12px 12px 42px;
+  /* margin-bottom: 10px; */
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border-color var(--animation-time) var(--timing-function);
+}
+.form-input:focus {
+  border-color: var(--brand-color);
+}
+.form-input:focus + .input-icon {
+  fill: var(--brand-color);
+}
+
+.text-area-comment {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border-color var(--animation-time) var(--timing-function);
+}
+.text-area-comment:focus {
+  border-color: var(--brand-color);
+}
+.text-area-comment::placeholder {
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.ckeckbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+.ckeckbox-label span {
+  width: 16px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+
+  border: 2px solid var(--title-color);
+  border-radius: 2px;
+}
+.checkbox-icon {
+  fill: #ffffff;
+}
+.checkbox-input:checked + .ckeckbox-label span {
+  background-color: var(--brand-color);
+  border: none;
+}
+
+.ckeckbox-label a {
+  color: var(--brand-color);
+  text-decoration: underline;
+
+  transition: color var(--animation-time) var(--timing-function);
+}
+.ckeckbox-label a:hover {
+  color: #188ce8;
+}
+
+.modal-btn-submit {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
